@@ -5,6 +5,9 @@ import "bytes"
 // Column to wrap lines to (disabled by default)
 var LineWrapColumn = 0
 
+// The indent string, defaults to two spaces
+var IndentString = defaultIndentString
+
 // Maxmimum characters a long word can extend past LineWrapColumn without wrapping
 var LineWrapMaxSpillover = 5
 
@@ -26,7 +29,7 @@ func (htmlDoc *htmlDocument) bytes() []byte {
 		lineWrapColumn:       LineWrapColumn,
 		lineWrapMaxSpillover: LineWrapMaxSpillover,
 
-		indentString: defaultIndentString,
+		indentString: IndentString,
 		indentLevel:  startIndent,
 	}
 
