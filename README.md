@@ -189,6 +189,35 @@ Output:
 </html>
 ```
 
+## Basic configuration
+### Condense and inline tags
+```go
+// Enable condensing a tag with only inline children onto a single line, or
+// completely inlining it with sibling nodes.
+// Tags to be treated as inline can be set in `InlineTags`.
+// Only inline tags will be completely inlined, while other condensable tags
+// will be given their own dedicated (single) line.
+gohtml.Condense = false
+
+// Tags that are considered inline tags.
+// Note: Text nodes are always considered to be inline
+gohtml.InlineTags = map[string]bool{
+	"a":      true,
+	"code":   true,
+	"em":     true,
+	"span":   true,
+	"strong": true,
+}
+
+// Maximum length of an opening inline tag before it's un-inlined
+gohtml.InlineTagMaxLength = 40
+```
+## Indentation string
+```go
+// The indent string, defaults to two spaces
+gohtml.IndentString = "  "
+```
+
 ## Docs
 
 * [GoDoc](https://godoc.org/github.com/yosssi/gohtml)
