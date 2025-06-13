@@ -1,14 +1,14 @@
 # GoHTML - HTML formatter for Go
 
 [![wercker status](https://app.wercker.com/status/926cf3edc004271539be40d705d037bd/s "wercker status")](https://app.wercker.com/project/bykey/926cf3edc004271539be40d705d037bd)
-[![GoDoc](http://godoc.org/github.com/yosssi/gohtml?status.png)](http://godoc.org/github.com/yosssi/gohtml)
+[![GoDoc](http://godoc.org/github.com/peterszarvas94/gohtml?status.png)](http://godoc.org/github.com/peterszarvas94/gohtml)
 
 GoHTML is an HTML formatter for [Go](http://golang.org/). You can format HTML source codes by using this package.
 
 ## Install
 
 ```
-go get -u github.com/yosssi/gohtml
+go get -u github.com/peterszarvas94/gohtml
 ```
 
 ## Example
@@ -21,7 +21,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/yosssi/gohtml"
+	"github.com/peterszarvas94/gohtml"
 )
 
 func main() {
@@ -46,35 +46,35 @@ Output:
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>
-      This is a title.
-    </title>
-    <script type="text/javascript">
-      alert('aaa');
-      if (0 < 1) {
-      	alert('bbb');
-      }
-    </script>
-    <style type="text/css">
-      body {font-size: 14px;}
-      h1 {
-      	font-size: 16px;
-      	font-weight: bold;
-      }
-    </style>
-  </head>
-  <body>
-    <form>
-      <input type="name">
-      <p>
-        AAA
-        <br>
-        BBB>
-      </p>
-    </form>
-    <!-- This is a comment. -->
-  </body>
+	<head>
+		<title>This is a title.</title>
+		<script type="text/javascript">
+			alert("aaa");
+			if (0 < 1) {
+				alert("bbb");
+			}
+		</script>
+		<style type="text/css">
+			body {
+				font-size: 14px;
+			}
+			h1 {
+				font-size: 16px;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<input type="name" />
+			<p>
+				AAA
+				<br />
+				BBB>
+			</p>
+		</form>
+		<!-- This is a comment. -->
+	</body>
 </html>
 ```
 
@@ -88,7 +88,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/yosssi/gohtml"
+	"github.com/peterszarvas94/gohtml"
 )
 
 func main() {
@@ -156,7 +156,7 @@ import (
 	"os"
 	"text/template"
 
-	"github.com/yosssi/gohtml"
+	"github.com/peterszarvas94/gohtml"
 )
 
 func main() {
@@ -181,16 +181,17 @@ Output:
 
 ```html
 <html>
-  <head>
-  </head>
-  <body>
-    Hello!
-  </body>
+	<head> </head>
+	<body>
+		Hello!
+	</body>
 </html>
 ```
 
 ## Basic configuration
+
 ### Condense and inline tags
+
 ```go
 // Enable condensing a tag with only inline children onto a single line, or
 // completely inlining it with sibling nodes.
@@ -212,7 +213,9 @@ gohtml.InlineTags = map[string]bool{
 // Maximum length of an opening inline tag before it's un-inlined
 gohtml.InlineTagMaxLength = 40
 ```
+
 ## Indentation string
+
 ```go
 // The indent string, defaults to two spaces
 gohtml.IndentString = "  "
@@ -220,4 +223,4 @@ gohtml.IndentString = "  "
 
 ## Docs
 
-* [GoDoc](https://godoc.org/github.com/yosssi/gohtml)
+- [GoDoc](https://godoc.org/github.com/peterszarvas94/gohtml)
